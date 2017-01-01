@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { Text, Navigator } from 'react-native';
 
+import HomeScene from './HomeScene';
 
 export default class MapSchedule extends Component {
   constructor(props) {
@@ -9,7 +10,14 @@ export default class MapSchedule extends Component {
 
   render() {
     return (
-      <Text style={{marginTop: 50}}>Howdy ho</Text>
+      <Navigator
+        initialRoute = {{title: 'home scene', index:0}}
+        renderScene={(route, navitator) =>
+          <HomeScene
+            title={route.title}
+          />
+        }
+      />
     )
   }
 }
