@@ -1,23 +1,24 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { StyleSheet, View, Text, TouchableHighlight } from 'react-native';
 
 export default class HomeScene extends Component {
   render() {
     return (
-      <View>
+      <View style={{marginTop: 50, alignItems: 'center'}}>
         <Text>Current Scene: {this.props.title}</Text>
-
-        <TouchableHighlight onPress={this.props.onForward}>
-          <Text>Tap me to load the next scene</Text>
-        </TouchableHighlight>
-
-        <TouchableHighlight onPress={this.props.onBack}>
-          <Text>Tap me to go back</Text>
-        </TouchableHighlight>
       </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  mainHead: {
+    fontSize: 50
+  },
+  secondaryText: {
+    fontSize: 30
+  }
+})
 
 HomeScene.propTypes = {
   title: PropTypes.string.isRequired,
