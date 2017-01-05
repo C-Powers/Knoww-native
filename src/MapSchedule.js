@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import {Scene, Router} from 'react-native-router-flux';
 import { Text, TouchableHighlight, StyleSheet, Navigator, View } from 'react-native';
 
+import HomeScene from './HomeScene';
+import Calendar from './Calendar';
+
 export default class MapSchedule extends Component {
   render() {
     return (
       <Router>
         <Scene key="root">
-          <Scene key="home" component={HomeScene} title="Login"/>
-          <Scene key="calendar" component={Calendar} title="Register"/>
-          <Scene key="home" component={Home}/>
+          <Scene key="home" component={HomeScene} title="HomeScene" initial={true} />
+          <Scene key="calendar" component={Calendar} title="Calendar"/>
         </Scene>
       </Router>
     )
