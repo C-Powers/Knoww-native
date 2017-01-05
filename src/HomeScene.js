@@ -1,12 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 export default class HomeScene extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {text: ""};
+  }
+
+  gotoCalendar = () => Actions.calendar({text: this.state.text});
+
   render() {
     return (
       <View style={{margin: 128}}>
-        <Text onPress={Actions.calendar}>This is PageOne!</Text>
+        <Text onPress={this.gotoCalendar}>What do you want to say?</Text>
+        <Text>{this.state.text}</Text>
+        <TextInput
+          style={{height: 40}}
+          placeholder="Tell your future self something."
+          onChangeText={(text) => this.setState({text})}
+        />
       </View>
     )
   }
