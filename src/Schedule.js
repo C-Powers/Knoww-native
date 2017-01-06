@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { Calendar } from 'react-native-calendar';
+import Calendar from 'react-native-calendar';
 
 const Schedule = () => {
+  const customStyle = {
+    currentDayCircle: {
+      backgroundColor: 'blue',
+    },
+  }
+
+  addDate = (title) => Actions.dayScene({title: title});
+  //gotoSchedule = () => Actions.schedule({text: this.state.text});
+
   return (
-    <View style={{margin: 128}}>
-      <Text> howdy </Text>
+    <View>
+      <Calendar
+        customStyle={customStyle}
+        style={styles.calendarSpot}
+        scrollEnabled
+      />
+      <Text onPress={() => addDate("-- pass in the day here --")}>
+        click here to add a date
+      </Text>
     </View>
   )
 }
 
-export default Schedule
+const styles = StyleSheet.create({
+  calendarSpot: {
+    paddingTop:50
+  }
+});
 
-// export default class Schedule extends Component {
-//
-//   render() {
-//     return (
-//       <View style={{margin: 128}}>
-//
-//       </View>
-//     )
-//   }
-// }
+export default Schedule
 
 
 // export default class Schedule extends Component {

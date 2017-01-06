@@ -4,14 +4,16 @@ import { Text, TouchableHighlight, StyleSheet, Navigator, View } from 'react-nat
 
 import HomeScene from './HomeScene';
 import Schedule from './Schedule';
+import DayScene from './DayScene';
 
 export default class MapSchedule extends Component {
   render() {
     return (
       <Router>
         <Scene key="root">
-          <Scene key="home" component={HomeScene} title="HomeScene" initial={true} />
-          <Scene key="schedule" component={Schedule} title="Schedule"/>
+          <Scene key="home" component={HomeScene} title="HomeScene" />
+          <Scene key="schedule" component={Schedule} title="Schedule" initial hideNavBar/>
+          <Scene key="dayScene" component={DayScene} title="DayScene" hideNavBar={false}/>
         </Scene>
       </Router>
     )
