@@ -3,7 +3,7 @@ import {Scene, Router} from 'react-native-router-flux';
 import { Text, TouchableHighlight, StyleSheet, Navigator, View } from 'react-native';
 
 import HomeScene from './HomeScene';
-import Calendar from './Calendar';
+import Schedule from './Schedule';
 
 export default class MapSchedule extends Component {
   render() {
@@ -11,7 +11,7 @@ export default class MapSchedule extends Component {
       <Router>
         <Scene key="root">
           <Scene key="home" component={HomeScene} title="HomeScene" initial={true} />
-          <Scene key="calendar" component={Calendar} title="Calendar"/>
+          <Scene key="schedule" component={Schedule} title="Schedule"/>
         </Scene>
       </Router>
     )
@@ -27,7 +27,7 @@ export default class MapSchedule extends Component {
 // import { Text, TouchableHighlight, StyleSheet, Navigator, View } from 'react-native';
 //
 // import HomeScene from './HomeScene';
-// import Calendar from './Calendar'
+// import Schedule from './Schedule'
 //
 // const styles = StyleSheet.create({
 //   center: {
@@ -95,7 +95,7 @@ export default class MapSchedule extends Component {
 // //   render() {
 // //     routes = [
 // //       {title: 'home scene', index: 0},
-// //       {title: 'Calendar Scene', index: 1}
+// //       {title: 'Schedule Scene', index: 1}
 // //     ]
 // //     return (
 // //       <Navigator

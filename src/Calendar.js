@@ -9,7 +9,7 @@ export default class Calendar extends Component {
       <View style={{margin: 128}}>
         <Text>You said....</Text>
         <Text>{this.props.text}</Text>
-        <Text onPress={Actions.pop()}> Want to tell yourself something again?Want to tell yourself something again?Want to tell yourself something again?Want to tell yourself something again?Want to tell yourself something again?Want to tell yourself something again? </Text>
+        <Text onPress={() => Actions.pop()}> Want to tell yourself something again? </Text>
       </View>
     )
   }

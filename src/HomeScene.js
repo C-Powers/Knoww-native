@@ -8,12 +8,12 @@ export default class HomeScene extends Component {
     this.state = {text: ""};
   }
 
-  gotoCalendar = () => Actions.calendar({text: this.state.text});
+  gotoSchedule = () => Actions.schedule({text: this.state.text});
 
   render() {
     return (
       <View style={{margin: 128}}>
-        <Text onPress={this.gotoCalendar}>What do you want to say?</Text>
+        <Text onPress={this.gotoSchedule}>What do you want to say?</Text>
         <Text>{this.state.text}</Text>
         <TextInput
           style={{height: 40}}
