@@ -14,14 +14,34 @@ export default class Schedule extends Component {
     };
   }
 
-  addDate = (title) => Actions.dayScene({title: title});
+
+
+  //addDate = (title) => Actions.dayScene({title: title});
+  addDate = (data) => this.setState({selectedDate: data})
 
   render() {
+    let eventDates = ['2017-01-03', '2017-01-05', '2017-01-28', '2017-01-30']
+    const customStyle = {
+        eventIndicator: {
+          color: 'red'
+        },
+        currentDayText: {
+          color: 'green',
+        },
+        day: {
+          color: 'blue',
+        },
+      }
+
     return (
        <View style={{marginTop: 20}}>
          <Calendar
+           customStyle={customStyle}
            scrollEnabled
-           onDateSelect={(date) => this.setState({ selectedDate: date })}
+           //eventDates = {this.eventDates}
+            eventDates={['2017-01-05']} 
+           //onDateSelect={(date) => this.setState({ selectedDate: date })}
+           onDateSelect={(date) => this.addDate(date)}
          />
 
          <Text>Selected Date: {moment(this.state.selectedDate).format('MMMM DD YYYY')}</Text>
