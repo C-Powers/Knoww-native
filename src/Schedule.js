@@ -5,7 +5,6 @@ import { Actions } from 'react-native-router-flux';
 import Calendar from 'react-native-calendar';
 import moment from 'moment';
 
-
 export default class Schedule extends Component {
   constructor(props) {
     super(props);
@@ -14,34 +13,48 @@ export default class Schedule extends Component {
     };
   }
 
-
-
   //addDate = (title) => Actions.dayScene({title: title});
   addDate = (data) => this.setState({selectedDate: data})
 
   render() {
     let eventDates = ['2017-01-03', '2017-01-05', '2017-01-28', '2017-01-30']
     const customStyle = {
-        eventIndicator: {
-          color: 'red'
-        },
-        currentDayText: {
-          color: 'green',
+        calendarContainer: {
+          backgroundColor: '#ecf0f1',
         },
         day: {
-          color: 'blue',
+          color: '#34495e',
         },
+        weekendDayText: {
+          color: '#95a5a6',
+        },
+        currentDayCircle: {
+          backgroundColor: '#c0392b',
+        },
+        currentDayText: {
+          color: '#c0392b',
+        },
+        eventIndicator: {
+          backgroundColor: '#8e44ad',
+        },
+        hasEventDaySelectedCircle: {
+          backgroundColor: '#8e44ad',
+        },
+
       }
+
+    const testEvent = [{date: '2017-01-04', hasEventCircle: {backgroundColor: 'powderblue'}}];
 
     return (
        <View style={{marginTop: 20}}>
          <Calendar
-           customStyle={customStyle}
-           scrollEnabled
-           //eventDates = {this.eventDates}
-            eventDates={['2017-01-05']} 
-           //onDateSelect={(date) => this.setState({ selectedDate: date })}
-           onDateSelect={(date) => this.addDate(date)}
+            customStyle={customStyle}
+            scrollEnabled
+            showEventIndicators
+            eventDates = {eventDates}
+            //onDateSelect={(date) => this.setState({ selectedDate: date })}
+            //events={testEvent}
+            onDateSelect={(date) => this.addDate(date)}
          />
 
          <Text>Selected Date: {moment(this.state.selectedDate).format('MMMM DD YYYY')}</Text>
@@ -68,10 +81,18 @@ export default class Schedule extends Component {
 //
 //   return (
 //     <View>
-//       <Calendar
-//         customStyle={customStyle}
-//         style={styles.calendarSpot}
-//         scrollEnabled
+//     <Calendar
+//        //sref="calendar"
+//        showEventIndicators
+//        eventDates={['2016-07-03', '2016-07-05', '2016-07-28', '2016-07-30']}
+//        events={[{date: '2016-07-04', hasEventCircle: {backgroundColor: 'powderblue'}}, {date: '2017-01-04', hasEventCircle: {backgroundColor: 'powderblue'}}]}
+//        scrollEnabled
+//        showControls
+//        //dayHeadings={customDayHeadings}
+//        //monthNames={customMonthNames}
+//        titleFormat={'MMMM YYYY'}
+//        prevButtonText={'Prev'}
+//        nextButtonText={'Next'}
 //       />
 //       <Text onPress={() => addDate("-- pass in the day here --")}>
 //         click here to add a date
