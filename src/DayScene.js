@@ -12,11 +12,14 @@ const DayScene = () => {
 
   return (
     <View>
-      <Text style={{marginTop:20}}>
+      <Text style={{marginTop:100}}>
         add your dates here eventually
       </Text>
       <Text onPress={() => Actions.pop()}>
         Back
+      </Text>
+      <Text style={{marginTop:20}}>
+        {console.log(this.props.type)}
       </Text>
     </View>
   )

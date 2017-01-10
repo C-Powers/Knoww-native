@@ -39,7 +39,9 @@ const Schedule = () => {
     },
   }
 
-  addDate = (title) => Actions.dayScene({title: title});
+  const addDate = (title) => {
+    Actions.dayScene({title: title}, {type: ScheduleData.dates[0].items[0]})
+  };
   //gotoSchedule = () => Actions.schedule({text: this.state.text});
 
   return (
@@ -51,7 +53,7 @@ const Schedule = () => {
         eventDates = {ScheduleData.dates.map((item) => item.day)}
         //onDateSelect={(date) => this.setState({ selectedDate: date })}
         //events={testEvent}
-        onDateSelect={(date) => this.addDate(moment(date).format('MMMM DD YYYY'))}
+        onDateSelect={(date) => addDate(moment(date).format('MMMM DD YYYY'))}
         />
 
      {/* <Text> Selected Date: {moment(this.state.selectedDate).format('MMMM DD YYYY')} </Text> */}

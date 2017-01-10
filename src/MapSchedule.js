@@ -13,7 +13,7 @@ export default class MapSchedule extends Component {
         <Scene key="root">
           <Scene key="home" component={HomeScene} title="HomeScene" />
           <Scene key="schedule" component={Schedule} title="Schedule" initial hideNavBar/>
-          <Scene key="dayScene" component={DayScene} title="DayScene" hideNavBar={false}/>
+          <Scene key="dayScene" component={DayScene} title="DayScene" type="replace" hideNavBar={false}/>
         </Scene>
       </Router>
     )
