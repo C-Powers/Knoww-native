@@ -40,7 +40,7 @@ const Schedule = () => {
   }
 
   const addDate = (title) => {
-    Actions.dayScene({title: title}, {type: ScheduleData.dates[0].items[0]})
+    Actions.dayScene({title: title, data: 'lol some data'}/*{type: ScheduleData.dates[0].items[0]}*/)
   };
   //gotoSchedule = () => Actions.schedule({text: this.state.text});
 
@@ -58,9 +58,9 @@ const Schedule = () => {
 
      {/* <Text> Selected Date: {moment(this.state.selectedDate).format('MMMM DD YYYY')} </Text> */}
 
-     <Text onPress={() => this.addDate(moment(this.state.selectedDate).format('MMMM DD YYYY'))}>
+     {/* <Text onPress={() => this.addDate(moment(this.state.selectedDate).format('MMMM DD YYYY'))}>
        click here to add a date
-     </Text>
+     </Text> */}
    </View>
   )
 }

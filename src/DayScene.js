@@ -9,7 +9,7 @@ const DayScene = () => {
       backgroundColor: 'blue',
     },
   }
-
+  const data = this.props.data || 'No Data';
   return (
     <View>
       <Text style={{marginTop:100}}>
@@ -19,7 +19,7 @@ const DayScene = () => {
         Back
       </Text>
       <Text style={{marginTop:20}}>
-        {console.log(this.props.type)}
+        {data}
       </Text>
     </View>
   )
